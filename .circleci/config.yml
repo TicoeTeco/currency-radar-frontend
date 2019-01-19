@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:  
+      - image: circleci/node:10.15.0
+    steps:
+      - checkout
+      - run: echo "Hello Circle CI"
+
+workflow:
+  version: 2
+  hello:
+    jobs:
+      - build
