@@ -5,10 +5,19 @@ jobs:
       - image: circleci/node:10.15.0
     steps:
       - checkout
-      - run: echo "Hello Circle CI"
+      - run: echo "Instaling node dependecies"
+      - run: 'npm install'
+  test:
+    docker:
+      - image: circleci/node:10.15.0
+    steps:
+      - checkout
+      - run: echo "Running tests with Jest"
+      - run: 'npm run test'
 
 workflow:
   version: 2
-  hello:
+  build_and_test:
     jobs:
       - build
+      - test
