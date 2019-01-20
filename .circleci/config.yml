@@ -6,13 +6,13 @@ jobs:
     steps:
       - checkout
       - restore_cache: 
-        key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "package.json" }}
       - run: 
-        name: Set up Dependencies 
-        command: npm install
+          name: Set up Dependencies 
+          command: npm install
       - run: 
-        name: Run Tests and Coverage 
-        command: npm run test
+          name: Run Tests and Coverage 
+          command: npm run test
 
 workflow:
   version: 2
