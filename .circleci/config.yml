@@ -13,8 +13,7 @@ jobs:
       - run: 
           name: Run Tests and Coverage 
           command: npm run test
-
-workflow:
+workflows:
   version: 2
   build_and_test:
     jobs:
