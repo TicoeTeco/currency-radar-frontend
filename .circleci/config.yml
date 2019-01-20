@@ -5,8 +5,6 @@ jobs:
       - image: circleci/node:10.15.0
     steps:
       - checkout
-      - restore_cache: 
-          key: dependency-cache-{{ checksum "package.json" }}
       - run: 
           name: Set up Dependencies 
           command: npm install
