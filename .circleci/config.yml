@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: 
           name: Set up Dependencies 
-          command: npm install
+          command: rm -rf package-lock.json node_modules && npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
